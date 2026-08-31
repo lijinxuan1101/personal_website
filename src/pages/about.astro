@@ -10,6 +10,7 @@ const description = `Education, experience, and projects of ${PROFILE.name}.`;
 const education = [
 	{
 		school: 'National University of Singapore',
+		link: 'https://www.comp.nus.edu.sg/',
 		place: 'Singapore',
 		degree: 'Master of Computing (Information Systems specialisation)',
 		dates: 'Aug 2025 – May 2027',
@@ -17,6 +18,7 @@ const education = [
 	},
 	{
 		school: 'Central South University',
+		link: 'https://bs.csu.edu.cn/',
 		place: 'Changsha, China',
 		degree: 'B.S. in Information Management and Information System; Minor in Statistics',
 		dates: 'Sep 2021 – Jun 2025',
@@ -105,7 +107,15 @@ const projects = [
 						education.map((e) => (
 							<div>
 								<div class="flex flex-wrap items-baseline justify-between gap-x-3">
-									<h3 class="m-0 text-xl">{e.school}</h3>
+									<h3 class="m-0 text-xl">
+										{e.link ? (
+											<a href={e.link} target="_blank" rel="noopener">
+												{e.school}
+											</a>
+										) : (
+											e.school
+										)}
+									</h3>
 									<span class="text-sm text-[rgb(var(--gray))]">{e.place}</span>
 								</div>
 								<div class="flex flex-wrap items-baseline justify-between gap-x-3">
