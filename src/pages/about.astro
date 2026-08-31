@@ -27,6 +27,7 @@ const education = [
 const experience = [
 	{
 		org: 'JD',
+		link: 'https://about.jd.com/company',
 		place: 'China',
 		role: 'Algorithm Engineer Intern',
 		dates: 'Mar 2026 – Aug 2026',
@@ -37,6 +38,7 @@ const experience = [
 	},
 	{
 		org: 'Meituan',
+		link: 'https://www.meituan.com/en-US/about-us',
 		place: 'China',
 		role: 'AI Product Manager Intern',
 		dates: 'Jan 2026 – Mar 2026',
@@ -47,6 +49,7 @@ const experience = [
 	},
 	{
 		org: '6Estates',
+		link: 'https://www.6estates.com/',
 		place: 'Singapore',
 		role: 'Data Scientist Intern',
 		dates: 'Sep 2025 – Jan 2026',
@@ -131,7 +134,16 @@ const projects = [
 							<div>
 								<div class="flex flex-wrap items-baseline justify-between gap-x-3">
 									<h3 class="m-0 text-xl">
-										{x.role}, <span class="font-normal">{x.org}</span>
+										{x.role},{' '}
+										<span class="font-normal">
+											{x.link ? (
+												<a href={x.link} target="_blank" rel="noopener">
+													{x.org}
+												</a>
+											) : (
+												x.org
+											)}
+										</span>
 									</h3>
 									<span class="text-sm text-[rgb(var(--gray))]">{x.dates}</span>
 								</div>
