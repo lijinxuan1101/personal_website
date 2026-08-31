@@ -9,7 +9,7 @@ export const SITE_DESCRIPTION =
 export const PROFILE = {
 	name: 'Jinxuan Li',
 	role: 'Master of Computing (Information Systems), National University of Singapore',
-	email: 'lijinxuan_work@outlook.com',
+	email: 'lijinxuan1101_work@outlook.com',
 	phone: '+86 80398859',
 	website: 'https://lijinxuan1101.com',
 	linkedin: 'https://www.linkedin.com/in/jinxuan-li-8451b837a/',
