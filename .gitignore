@@ -1,3 +1,6 @@
+# personal source material (not part of the site)
+personal_info/
+
 # build output
 dist/
 # generated types
