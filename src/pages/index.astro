@@ -4,83 +4,8 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE, PROFILE } from '../consts';
 
-const education = [
-	{
-		school: 'National University of Singapore',
-		link: 'https://www.comp.nus.edu.sg/',
-		place: 'Singapore',
-		degree: 'Master of Computing (Information Systems specialisation)',
-		dates: 'Aug 2025 – May 2027',
-		notes: [],
-	},
-	{
-		school: 'Central South University',
-		link: 'https://bs.csu.edu.cn/',
-		place: 'Changsha, China',
-		degree: 'B.S. in Information Management and Information System; Minor in Statistics',
-		dates: 'Sep 2021 – Jun 2025',
-		notes: [],
-	},
-];
+import { education, experience, projects } from '../resume';
 
-const experience = [
-	{
-		org: 'JD',
-		place: 'China',
-		link: 'https://about.jd.com/company',
-		role: 'Algorithm Engineer Intern',
-		dates: 'Mar 2026 – Aug 2026',
-		points: [
-			'RectifyGuard (AAAI submission, under review): formalized out-of-region content drift in e-commerce image rectification and proposed a multi-stage framework — a violation-type-aware mask refinement module (VTAM), a pixel-level paste-back mechanism, and a non-diffusion refiner (LaMa, Restormer). Introduced the EC-Compliance-50K benchmark (50K images) and outperformed Qwen-Image-Edit, Seedream 5.0, and FLUX.2 across preservation, reconstruction, and boundary-consistency metrics.',
-			'Internal Compliance Data Management System: built a Flask-based data-governance platform with configurable scheduled pipelines that incrementally aggregate trillion-row Hive datasets into ClickHouse, plus Redis caching for millisecond-level responses, and custom computation/visualization modules for core compliance metrics.',
-		],
-	},
-	{
-		org: 'Meituan',
-		link: 'https://www.meituan.com/en-US/about-us',
-		place: 'China',
-		role: 'AI Product Manager Intern',
-		dates: 'Jan 2026 – Mar 2026',
-		points: [
-			'Agent Product Evaluation: co-developed a hierarchical evaluation framework for leading agent products across model capability, agent harness, and end-to-end performance, and built a weekly benchmark that surfaced capability gaps and informed product iterations.',
-			'Business Analytics Data Agent: designed a scenario-specific Data Agent and its toolchain, integrating internal data sources, an analysis agent, and an enterprise messaging bot to enable natural-language retrieval, drill-down analysis, and report generation.',
-		],
-	},
-	{
-		org: '6Estates',
-		link: 'https://www.6estates.com/',
-		place: 'Singapore',
-		role: 'Data Scientist Intern',
-		dates: 'Sep 2025 – Jan 2026',
-		points: [
-			'Intelligent Document Processing System: developed the bank-statement OCR pipeline for automated extraction of static fields and transaction tables across dozens of banks, and refactored the production data-processing pipeline to standardize heterogeneous formats.',
-			'Credit-Risk Information Extraction: built a GPT-4.1-based workflow to extract overdue-payment information from SLIK reports, redesigning prompts and strengthening validation to reliably convert unstructured credit reports into structured risk data.',
-		],
-	},
-];
-
-const projects = [
-	{
-		title: 'Freddie Mac Mortgage Default Anomaly Detection',
-		tag: 'Machine Learning',
-		date: 'Nov 2025',
-		link: null,
-		points: [
-			'Built a complete anomaly-detection pipeline on the Freddie Mac Single-Family dataset with 68 domain-informed features structured into 7 modular feature builders.',
-			'Compared Isolation Forest, LOF, One-Class SVM, and Elliptic Envelope; a fusion model over early-delinquency, amortization-shortfall, zero-payment, and LOF signals reached AUPRC 0.560 on the Kaggle private leaderboard vs. a 0.130 baseline.',
-		],
-	},
-	{
-		title: 'Corrective RAG for Financial Report Analysis',
-		tag: 'RAG',
-		date: 'Nov 2025',
-		link: null,
-		points: [
-			'A LangGraph-based Corrective RAG system integrating a local PDF knowledge base with Tavily web search, using adaptive retrieval, query rewriting, document scoring, and conditional routing to reduce hallucinations.',
-			'Processed PDFs with PyPDFLoader and recursive splitting, generated OpenAI embeddings, and built a persistent Chroma vector store with incremental loading; shipped CLI, Streamlit, and FastAPI interfaces.',
-		],
-	},
-];
 ---
 
 <!doctype html>
@@ -154,13 +79,10 @@ const projects = [
 			<!-- Bio -->
 			<section class="mt-10 space-y-4 text-[1.05rem] leading-relaxed">
 				<p class="m-0">
-					I am a Master of Computing student (Information Systems) at the National University of
-					Singapore. My work focuses on
-					LLM algorithms and AI agents — spanning image-editing compliance, agent evaluation and
-					toolchains, retrieval-augmented generation, and document intelligence. I am especially
-					interested in exploring how frontier LLM techniques can be brought into real-world business
-					scenarios to deliver practical value. Most recently I have interned at JD, Meituan, and
-					6Estates.
+					I am a Master of Computing student at the National University of Singapore, with a
+					background in information systems and statistics. My work spans applied AI, agent
+					evaluation, machine learning, and data systems, alongside research in quantitative
+					finance. I have worked at Thales, JD, Meituan, and 6Estates.
 				</p>
 			</section>
 
